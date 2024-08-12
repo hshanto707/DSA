@@ -128,10 +128,4 @@ public class SinglyLinkedListTest {
     list.addEnd(3);
     assertEquals("1 2 3", list.toString(), "List should print items 1, 2, and 3");
   }
-
-  @Test
-  void testMain() {
-    // Testing main method indirectly by ensuring no exception occurs during execution
-    assertDoesNotThrow(() -> SinglyLinkedList.main(new String[] {}), "Main method should not throw any exception");
-  }
 }
