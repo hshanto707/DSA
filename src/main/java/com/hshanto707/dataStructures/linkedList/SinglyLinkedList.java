@@ -105,18 +105,20 @@ public class SinglyLinkedList<T> {
   }
 
   // Remove the last item of the list
-  public void removeLast() {
+  public T removeLast() {
     if (head == null) {
       throw new NoSuchElementException("List is empty");
     }
 
     if (head == tail) {
+      T elem = head.data;
       head = null;
       tail = null;
       size = 0;
-      return;
+      return elem;
     }
 
+    T elem = tail.data;
     Node current = head;
 
     while (current.next != tail) {
@@ -125,6 +127,8 @@ public class SinglyLinkedList<T> {
     current.next = null;
     tail = current;
     size--;
+
+    return elem;
   }
 
   // Remove an item of the given index
